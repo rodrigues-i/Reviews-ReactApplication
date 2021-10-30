@@ -6,6 +6,16 @@ const Reviews = ({ people }) => {
 	const [index, setIndex] = useState(0)
 	const {image, name, job, text} = people[index];
 
+	function nextPerson() {
+		let newIndex = index + 1;
+		setIndex(newIndex);
+	}
+
+	const prevPerson = () => {
+		let newIndex = index - 1;
+		setIndex(newIndex);
+	}
+
 	return (
 	<section>
 		<h1>Our reviews</h1>
@@ -16,10 +26,10 @@ const Reviews = ({ people }) => {
 				<h3>{job}</h3>
 				<p>{text}</p>
 			</div>
-			<button>
+			<button onClick={prevPerson}>
 				<FcPrevious />
 			</button>
-			<button>
+			<button onClick={nextPerson}>
 				<FcNext />
 			</button>
 		</article>

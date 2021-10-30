@@ -1,5 +1,11 @@
 import ReactDOM from 'react-dom';
 import Application from './Application';
+import { ErrorBoundary } from './ErrorBoundary';
 
+const main = (
+	<ErrorBoundary>
+		<Application />
+	</ErrorBoundary>
+	);
 
-ReactDOM.render(<Application />, document.getElementById('root'));
+ReactDOM.render(main, document.getElementById('root'));
